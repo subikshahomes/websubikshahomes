@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Subiksha Homes</title>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="#home">
+          <img src="assets/logo.png" alt="Subiksha Homes Logo" style="height: 50px;">
+        </a>
+        </div>
+        
+        <nav class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      
+        <div class="hamburger" onclick="toggleMenu()">
+          &#9776; <!-- Unicode for the hamburger icon -->
+        </div>
+      </header>
+      
+      <section id="home">
+        <section class="hero-slider" id="heroSlider">
+          <div class="slides">
+            <div class="slide" style="background-image: url('assets/project1.jpg');"></div>
+            <div class="slide" style="background-image: url('assets/project2.jpg');"></div>
+            <div class="slide" style="background-image: url('assets/project3.jpg');"></div>
+            <div class="slide" style="background-image: url('assets/project4.jpg');"></div>
+            <div class="slide" style="background-image: url('assets/project5.png');"></div>
+          </div>
+      
+          <div class="hero-text">
+            <h1>
+              <span class="line-one">Building trust with</span><br>
+              <span class="line-two">Bricks and Concrete</span>
+            </h1>
+          </div>
+      
+          <!-- Navigation arrows -->
+          <div class="nav-arrow left" onclick="prevSlide()">&#10094;</div>
+          <div class="nav-arrow right" onclick="nextSlide()">&#10095;</div>
+      
+          <!-- Dots -->
+          <div class="dots" id="dots">
+            <span onclick="goToSlide(0)"></span>
+            <span onclick="goToSlide(1)"></span>
+            <span onclick="goToSlide(2)"></span>
+            <span onclick="goToSlide(3)"></span>
+            <span onclick="goToSlide(4)"></span>
+          </div>
+        </section>
+      </section>
+      
+<section id="about">
+  <section class="about-us">
+    <div class="about-container">
+      <div class="about-image">
+        <img src="assets/project1.jpg" alt="Team planning construction">
+      </div>
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>
+            Subiksha Homes is a well-known construction company in South India, based in Chennai, with projects across Tamil Nadu. We specialize in creating beautiful, lasting spaces through joint ventures, partnerships, and direct construction services.
+            With years of experience, we offer a complete range of residential and commercial construction services, from concept to completion. Our focus is on building high-quality homes, including villas, bungalows, and apartments, through both direct construction and partnerships.
+            We work with landowners on Joint Venture (JV) projects, but our main goal is to deliver construction solutions with transparency, quality, and timely completion.
+              At Subiksha Homes, every project reflects our commitment to trust, quality, and excellence. We are more than just builders—we are your trusted partner in creating lasting spaces.
+        </p>
+        <p>
+          Our team brings years of expertise, commitment to excellence, and deep knowledge of the
+          construction industry. We take pride in turning land into lasting value — one brick at a time.
+        </p>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section id="services">
+  <section class="services-section">
+    <h2>Our Services</h2>
+    <p>
+      We offer comprehensive civil contracting services, ensuring precision, durability, and timely execution. With a focus on integrity and excellence, Subiksha Homes delivers projects that stand the test of time.
+    </p>
+
+    <div class="services-grid">
+      <div class="service-card" data-aos="fade-up">
+        <img src="assets/apartments.jpg" alt="Apartments">
+        <div class="label">APARTMENTS</div>
+      </div>
+      <div class="service-card" data-aos="fade-up">
+        <img src="assets/villas.jpg" alt="Villas">
+        <div class="label">VILLAS</div>
+      </div>
+      <div class="service-card" data-aos="fade-up">
+        <img src="assets/rowhouses.jpg" alt="Row Houses">
+        <div class="label">ROW HOUSES</div>
+      </div>
+      <div class="service-card" data-aos="fade-up">
+        <img src="assets/bungalow.jpg" alt="Bungalows">
+        <div class="label">BUNGALOWS</div>
+      </div>
+    </div>
+    <div class="services-grid">
+        <div class="service-card" data-aos="fade-down">
+          <img src="assets/interior.jpg" alt="Interior works">
+          <div class="label">INTERIOR WORKS</div>
+        </div>
+        <div class="service-card" data-aos="fade-down">
+          <img src="assets/landscaping.jpg" alt="Landscaping">
+          <div class="label">LANDSCAPING</div>
+        </div>
+        <div class="service-card" data-aos="fade-down">
+          <img src="assets/jv.jpg" alt="Joint ventures">
+          <div class="label">JOINT VENTURES</div>
+        </div>
+        <div class="service-card" data-aos="fade-down">
+          <img src="assets/industrial.jpg" alt="Industirlal construction">
+          <div class="label">INDUSTRIAL CONSTRUCTION</div>
+        </div>
+      </div>
+      <div class="services-description">
+        <p>We offer end-to-end civil work solutions, including:</p>
+        <ul>
+          <li>Custom construction of Villas, Bungalows and Apartments</li>
+          <li>All types of civil-related works and renovations</li>
+          <li>Site development and infrastructure</li>
+          <li>Landscaping and outdoor design</li>  
+        </ul>
+        <p>
+          Whether it's a compact city villa or a multi-unit apartment building, we approach
+          every project with the same commitment:<br>
+          <strong>Quality. Integrity. Timely Delivery.</strong>
+        </p>
+      </div>
+      
+  </section>
+</section>
+ 
+
+<section class="why-choose-us">
+  <div class="why-choose-us-container">
+    <div class="why-choose-us-text" data-aos="fade-right">
+      <h2>Why Choose Us?</h2>
+      <li>Turnkey civil services under one roof</li>
+      <li>Transparent project planning and execution</li>
+      <li>Personalized design and construction support</li>
+      <li>Trusted partners for Joint Ventures & Partnerships</li>
+      <li>Experienced in ​handling both small-scale and large-scale developments</li>
+      <p>
+        At Subiksha Ho​mes, we don’t just build structures – we build dreams, brick by brick. Let’s turn your land into a legacy.
+      </p>
+    </div>
+    <div class="why-choose-us-image" data-aos="fade-left">
+      <img src="assets/project5.png" alt="image source">
+    </div>
+  </div>
+</section>
+
+
+  
+
+
+  <section class="benefits-section">
+    <h2 class="benefits-title">Top Benefits</h2>
+    <div class="benefits-container">
+  
+      <div class="benefit-card">
+        <div class="benefit-icon-circle icon-1">
+          <img src="assets/icon1.png" alt="Icon 1" />
+        </div>
+        <div class="benefit-content">
+          <h3>Highly Reputable</h3>
+          <p>100% Transparent JV Agreements</p>
+        </div>
+      </div>
+  
+      <div class="benefit-card">
+        <div class="benefit-icon-circle icon-2">
+          <img src="assets/icon2.png" alt="Icon 2" />
+        </div>
+        <div class="benefit-content">
+          <h3>Quality Services</h3>
+          <p>Premium Build Quality and Custom Design</p>
+        </div>
+      </div>
+  
+      <div class="benefit-card">
+        <div class="benefit-icon-circle icon-3">
+          <img src="assets/icon3.png" alt="Icon 3" />
+        </div>
+        <div class="benefit-content">
+          <h3>Certified Services</h3>
+          <p>End-to-End Construction Management</p>
+        </div>
+      </div>
+  
+      <div class="benefit-card">
+        <div class="benefit-icon-circle icon-4">
+          <img src="assets/icon4.png" alt="Icon 4" />
+        </div>
+        <div class="benefit-content">
+          <h3>Trusted Projects</h3>
+          <p>Trusted by landowners across Chennai</p>
+        </div>
+      </div>
+  
+    </div>
+  </section>
+  
+  
+<section id="contact">
+  <section class="contact-section">
+    <div class="contact-card">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <div class="input-field">
+          <input type="text" id="name" name="name" required />
+          <label for="name">Enter your name</label>
+        </div>
+        <div class="input-field">
+          <input type="text" id="phone" name="phone" required />
+          <label for="phone">Enter your phone number</label>
+        </div>
+        <div class="input-field">
+          <input type="email" id="email" name="email" required />
+          <label for="email">Enter your email</label>
+        </div>
+        <div class="input-field">
+          <textarea id="message" name="message" required></textarea>
+          <label for="message">Your message</label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </section>  
+</section>
+  
+  
+<!-- Load EmailJS script -->
+<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+<script type="text/javascript">
+    emailjs.init('service_0sfq2d9'); // Replace with your actual API key from EmailJS
+
+    document.getElementById('contactForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+        emailjs.sendForm('service_0sfq2d9', 'template_3fwwozrk', formData)
+            .then(function (response) {
+                alert('Message sent successfully!');
+            }, function (error) {
+                alert('Failed to send message. Please try again later.');
+            });
+    });
+</script>
+
+
+<footer class="footer">
+    <div class="footer-container">
+      <!-- Column 1: Logo and Description -->
+      <div class="footer-logo">
+        <img src="assets/logo.png" alt="Subiksha Homes Logo" class="footer-logo-img" />
+        <p class="footer-description">
+          Building dream homes in a trusted name in joint venture constructions, committed to transforming land into high-quality residential and commercial spaces.
+        </p>
+      </div>
+  
+      <!-- Column 2: Contact Info -->
+      <div class="footer-contact">
+        <h3>Contact Info</h3>
+        <p><img src="assets/pin.png" alt="Location" class="footer-icon" /> Plot no: 1 & 1A, Lake View Road, Pallikkaranai, Chennai - 600100</p>
+        <p><img src="assets/mail.png" alt="Email" class="footer-icon" /> <a href="mailto:subikshahomes@gmail.com">subikshahomes@gmail.com</a></p>
+        <!-- <p><img src="assets/phone-icon.png" alt="Phone" class="footer-icon" /> <a href="tel:+919962995446">+91 9962995446</a></p> -->
+      </div>
+  
+      <!-- Column 3: Social Links with Icons -->
+      <div class="footer-links">
+        <h3>Links</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/subikshahomes" target="_blank" aria-label="Facebook">
+            <img src="assets/facebook.png" alt="Facebook" class="footer-social-icon" />
+          </a>
+          <a href="https://www.instagram.com/subikshahomes" target="_blank" aria-label="Instagram">
+            <img src="assets/instagram.png" alt="Instagram" class="footer-social-icon" />
+          </a>
+          <a href="https://wa.me/919962995446" target="_blank" aria-label="WhatsApp">
+            <img src="assets/whatsapp.png" alt="WhatsApp" class="footer-social-icon" />
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+        &copy; 2025 Subiksha Homes. All rights
+  </footer>
+  
+
+  
+
+  <!-- Slider Script -->
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelector(".slides");
+    const dots = document.querySelectorAll("#dots span");
+    const totalSlides = dots.length;
+
+    function showSlide(index) {
+      slides.style.transform = `translateX(-${index * 100}vw)`;
+      currentSlide = index;
+      dots.forEach((dot, i) => dot.classList.toggle("active", i === index));
+    }
+
+    function nextSlide() {
+      let next = (currentSlide + 1) % totalSlides;
+      showSlide(next);
+    }
+
+    function prevSlide() {
+      let prev = (currentSlide - 1 + totalSlides) % totalSlides;
+      showSlide(prev);
+    }
+
+    function goToSlide(index) {
+      showSlide(index);
+    }
+
+    // Touch support
+    let startX = 0;
+    slides.addEventListener("touchstart", e => {
+      startX = e.touches[0].clientX;
+    });
+    slides.addEventListener("touchend", e => {
+      let endX = e.changedTouches[0].clientX;
+      if (startX - endX > 50) nextSlide();
+      if (endX - startX > 50) prevSlide();
+    });
+
+    setInterval(nextSlide, 6000); // Auto-slide every 6 seconds
+    showSlide(0);
+  </script>
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('nav');
+      nav.classList.toggle('active');
+    }
+  </script>
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+  
+    const aboutSection = document.querySelector('.about-container');
+    observer.observe(aboutSection);
+  </script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+<script>
+  AOS.init();
+</script>
+</body>
+</html>
