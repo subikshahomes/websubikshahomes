@@ -219,36 +219,42 @@
   </section>
   
   
-<section id="contact">
-  <section class="contact-section">
-    <div class="contact-card">
-      <h2>Contact Us</h2>
-      <form class="contact-form">
-        <div class="input-field">
-          <input type="text" id="name" name="name" required />
-          <label for="name">Enter your name</label>
-        </div>
-        <div class="input-field">
-          <input type="text" id="phone" name="phone" required />
-          <label for="phone">Enter your phone number</label>
-        </div>
-        <div class="input-field">
-          <input type="email" id="email" name="email" required />
-          <label for="email">Enter your email</label>
-        </div>
-        <div class="input-field">
-          <textarea id="message" name="message" required></textarea>
-          <label for="message">Your message</label>
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </section>  
-</section>
+  <section id="contact">
+    <section class="contact-section">
+      <div class="contact-card">
+        <h2>Contact Us</h2>
+        <form class="contact-form" action="https://formsubmit.co/subikshahomes@gmail.com" method="POST">
+          <div class="input-field">
+            <input type="text" id="name" name="name" required />
+            <label for="name">Enter your name</label>
+          </div>
+          <div class="input-field">
+            <input type="text" id="phone" name="phone" required />
+            <label for="phone">Enter your phone number</label>
+          </div>
+          <div class="input-field">
+            <input type="email" id="email" name="email" required />
+            <label for="email">Enter your email</label>
+          </div>
+          <div class="input-field">
+            <textarea id="message" name="message" required></textarea>
+            <label for="message">Your message</label>
+          </div>
+  
+          <!-- Optional FormSubmit configs -->
+          <input type="hidden" name="_captcha" value="false">
+          <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html"> -->
+  
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>  
+  </section>
+  
   
   
 <!-- Load EmailJS script -->
-<script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<!-- <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 <script type="text/javascript">
     emailjs.init('service_0sfq2d9'); // Replace with your actual API key from EmailJS
@@ -264,7 +270,7 @@
                 alert('Failed to send message. Please try again later.');
             });
     });
-</script>
+</script> -->
 
 
 <footer class="footer">
