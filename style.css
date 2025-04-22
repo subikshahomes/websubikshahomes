@@ -78,22 +78,94 @@ body {
     nav.active {
       display: flex;
     }
-  
-    .hamburger {
-      display: block;
-    }
   }
-  
+    /* Hamburger icon with animation */
+.hamburger {
+  display: none;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #ff7a00;
+  border-radius: 5px;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger span:nth-child(1) {
+  top: 0;
+}
+.hamburger span:nth-child(2) {
+  top: 10px;
+}
+.hamburger span:nth-child(3) {
+  top: 20px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 10px;
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 10px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  nav.nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background-color: #fff4e6;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+    gap: 1rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    min-width: 180px;
+    transition: all 0.3s ease-in-out;
+  }
+
+  nav.nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  nav.nav-links a {
+    margin: 0;
+    font-size: 1rem;
+  }
+}
+
   
   /* Hero Slider */
   .hero-slider {
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 90vh;
     overflow: hidden;
     background-color: #fff4e6;
 }
 
+/* Slides */
 .slides {
     display: flex;
     width: 500vw; /* 5 slides x 100vw */
@@ -117,83 +189,127 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Grey overlay */
+    background-color: transparent;
     z-index: 1;
 }
 
-
+/* ✅ Fix zoom issue on mobile screens */
+@media (max-width: 768px) {
+    .slide {
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
 
 /* Hero Text */
 .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 10%; /* Align text to the left */
-    transform: translateY(-50%);
-    color: #fff;
-    padding: 1rem 2rem;
-    max-width: none;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
-    z-index: 2; /* Ensure text appears above the overlay */
+  position: absolute;
+  top: 50%;
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center both vertically and horizontally */
+  color: #fff;
+  padding: 1rem 2rem;
+  max-width: none;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  animation: slideInFromLeft 1s ease-out forwards;
+  text-align: center; /* Center text for all screens */
 }
 
+/* Hero Text - Header */
 .hero-text h1 {
-    font-size: 4vw;
-    font-weight: 500;
-    line-height: 0.7; /* Remove extra gap between lines */
+  font-size: 4vw;
+  font-weight: 600;
+  line-height: 0.9;
+  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+  letter-spacing: 1px;
 }
 
 .hero-text h1 .line-one,
 .hero-text h1 .line-two {
-    display: block; /* Ensure no extra gap between the lines */
+  display: block;
 }
 
 /* Arrows */
 .nav-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 2rem;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.3);
-    padding: 0.5rem;
-    cursor: pointer;
-    z-index: 10;
-    user-select: none;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+  user-select: none;
+  opacity: 0;
+  animation: popUpArrows 1s 1s forwards;
 }
 
 .nav-arrow.left {
-    left: 1rem;
+  left: 1rem;
 }
 
 .nav-arrow.right {
-    right: 1rem;
+  right: 1rem;
 }
 
-/* Dots */
-/* .dots {
-    position: absolute;
-    bottom: 1.5rem;
+/* Slide-in Animation for Text */
+@keyframes slideInFromLeft {
+  from {
+    left: -100%;
+  }
+  to {
     left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 0.5rem;
+    transform: translate(-50%, -50%);
+  }
 }
 
-.dots span {
-    width: 10px;
-    height: 10px;
-    background-color: #fff;
-    border-radius: 50%;
-    cursor: pointer;
-} */
+/* Pop-up Animation for Arrows */
+@keyframes popUpArrows {
+  from {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+  }
+}
 
 /* Responsive Hero Text */
 @media (max-width: 768px) {
-    .hero-text h1 {
-        font-size: 8vw;
-        padding: 0 1rem;
-    }
+  .hero-slider {
+    height: 60vh; /* Reduced height for mobile view */
+  }
+
+  .slide {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .hero-text {
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .hero-text h1 {
+    font-size: 6vw;
+    line-height: 1.2;
+  }
+
+  .hero-text h1 .line-one,
+  .hero-text h1 .line-two {
+    white-space: nowrap; /* Prevent line break */
+  }
+
+  .nav-arrow {
+    font-size: 1.5rem;
+  }
 }
+
 
   .about-us {
     background-color: #fc8a5a;
@@ -496,22 +612,22 @@ body {
     background-color: #fc8a5a;
     padding: 8px 20px 60px;
   }
-  
+
   .benefits-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.8rem;
     color: #fff;
     text-align: center;
-    margin:10px 0 60px;
+    margin: 10px 0 60px;
   }
-  
+
   .benefits-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
   }
-  
+
   /* New card style */
   .benefit-card {
     background-color: white;
@@ -524,12 +640,15 @@ body {
     position: relative;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
+    opacity: 0; /* Cards start hidden */
+    transform: translateY(30px); /* Cards start off-screen */
+    animation: fadeInUp 1s ease-out forwards;
   }
-  
+
   .benefit-card:hover {
     transform: scale(1.05);
   }
-  
+
   /* Circle icon holder */
   .benefit-icon-circle {
     width: 80px;
@@ -545,13 +664,13 @@ body {
     align-items: center;
     justify-content: center;
   }
-  
+
   .benefit-icon-circle img {
     width: 40px;
     height: 40px;
     object-fit: contain;
   }
-  
+
   /* Content below icon */
   .benefit-content h3 {
     font-family: 'Montserrat', sans-serif;
@@ -559,14 +678,14 @@ body {
     margin: 10px 0 5px;
     color: #2c2c2c;
   }
-  
+
   .benefit-content p {
     font-size: 1rem;
     color: #444;
     font-family: 'Montserrat', sans-serif;
     padding: 0 10px;
   }
-  
+
   /* Optional icon sizing overrides if needed */
   .icon-1 img,
   .icon-2 img,
@@ -575,7 +694,7 @@ body {
     width: 42px;
     height: 42px;
   }
-  
+
   /* Responsive layout */
   @media (max-width: 768px) {
     .benefits-container {
@@ -583,19 +702,62 @@ body {
       align-items: center;
       gap: 30px;
     }
-  
+
     .benefits-title {
       text-align: center;
     }
   }
+
+  /* Animations for card sliding */
+  @keyframes slideFromTop {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideFromBottom {
+    from {
+      transform: translateY(100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  .benefit-card.show-from-top {
+    animation: slideFromTop 2s ease-out forwards;
+  }
+
+  .benefit-card.show-from-bottom {
+    animation: slideFromBottom 2s ease-out forwards;
+  }
+
+  /* Animation for fade-in and up */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   
   
 
  /* Contact Section */
-.contact-section {
+ .contact-section {
   padding: 60px 20px;
   background-color: #ffffff;
   text-align: center;
+  opacity: 0; /* Form starts hidden */
+  transform: translateY(30px); /* Form starts off-screen */
+  animation: fadeInUp 1s ease-out forwards; /* Animation for fade-in and sliding up */
 }
 
 /* Contact Card */
@@ -621,6 +783,10 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  opacity: 0; /* Form content starts hidden */
+  transform: translateY(30px); /* Form content starts off-screen */
+  animation: fadeInUp 1.2s ease-out forwards; /* Animation for fade-in and sliding up */
+  animation-delay: 0.2s; /* Slight delay for smooth sequencing */
 }
 
 /* Input Fields */
@@ -695,6 +861,19 @@ body {
       width: 100%;
   }
 }
+
+/* Animation for fade-in and sliding up */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 
 

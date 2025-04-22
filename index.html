@@ -25,8 +25,11 @@
           <a href="#contact">Contact</a>
         </nav>
       
-        <div class="hamburger" onclick="toggleMenu()">
-          &#9776; <!-- Unicode for the hamburger icon -->
+        <div class="hamburger" onclick="toggleMenu(this)">
+          <!-- &#9776; Unicode for the hamburger icon -->
+           <span></span>
+           <span></span>
+           <span></span>
         </div>
       </header>
       
@@ -46,7 +49,7 @@
               <span class="line-two">Bricks and Concrete</span>
             </h1>
           </div>
-      
+     
           <!-- Navigation arrows -->
           <div class="nav-arrow left" onclick="prevSlide()">&#10094;</div>
           <div class="nav-arrow right" onclick="nextSlide()">&#10095;</div>
@@ -171,52 +174,52 @@
   
 
 
-  <section class="benefits-section">
-    <h2 class="benefits-title">Top Benefits</h2>
-    <div class="benefits-container">
-  
+<section class="benefits-section">
+  <h2 class="benefits-title">Top Benefits</h2>
+  <div class="benefits-container">
+
       <div class="benefit-card">
-        <div class="benefit-icon-circle icon-1">
-          <img src="assets/icon1.png" alt="Icon 1" />
-        </div>
-        <div class="benefit-content">
-          <h3>Highly Reputable</h3>
-          <p>100% Transparent JV Agreements</p>
-        </div>
+          <div class="benefit-icon-circle icon-1">
+              <img src="assets/icon1.png" alt="Icon 1" />
+          </div>
+          <div class="benefit-content">
+              <h3>Highly Reputable</h3>
+              <p>100% Transparent JV Agreements</p>
+          </div>
       </div>
-  
+
       <div class="benefit-card">
-        <div class="benefit-icon-circle icon-2">
-          <img src="assets/icon2.png" alt="Icon 2" />
-        </div>
-        <div class="benefit-content">
-          <h3>Quality Services</h3>
-          <p>Premium Build Quality and Custom Design</p>
-        </div>
+          <div class="benefit-icon-circle icon-2">
+              <img src="assets/icon2.png" alt="Icon 2" />
+          </div>
+          <div class="benefit-content">
+              <h3>Quality Services</h3>
+              <p>Premium Build Quality and Custom Design</p>
+          </div>
       </div>
-  
+
       <div class="benefit-card">
-        <div class="benefit-icon-circle icon-3">
-          <img src="assets/icon3.png" alt="Icon 3" />
-        </div>
-        <div class="benefit-content">
-          <h3>Certified Services</h3>
-          <p>End-to-End Construction Management</p>
-        </div>
+          <div class="benefit-icon-circle icon-3">
+              <img src="assets/icon3.png" alt="Icon 3" />
+          </div>
+          <div class="benefit-content">
+              <h3>Certified Services</h3>
+              <p>End-to-End Construction Management</p>
+          </div>
       </div>
-  
+
       <div class="benefit-card">
-        <div class="benefit-icon-circle icon-4">
-          <img src="assets/icon4.png" alt="Icon 4" />
-        </div>
-        <div class="benefit-content">
-          <h3>Trusted Projects</h3>
-          <p>Trusted by landowners across Chennai</p>
-        </div>
+          <div class="benefit-icon-circle icon-4">
+              <img src="assets/icon4.png" alt="Icon 4" />
+          </div>
+          <div class="benefit-content">
+              <h3>Trusted Projects</h3>
+              <p>Trusted by landowners across Chennai</p>
+          </div>
       </div>
-  
-    </div>
-  </section>
+
+  </div>
+</section>
   
   
   <section id="contact">
@@ -355,11 +358,18 @@
     setInterval(nextSlide, 6000); // Auto-slide every 6 seconds
     showSlide(0);
   </script>
-  <script>
+  <!-- <script>
     function toggleMenu() {
       const nav = document.querySelector('nav');
       nav.classList.toggle('active');
     }
+  </script> -->
+  <script>
+    function toggleMenu(hamburger) {
+  hamburger.classList.toggle("active");
+  document.querySelector(".nav-links").classList.toggle("active");
+}
+
   </script>
   <script>
     const observer = new IntersectionObserver((entries) => {
@@ -381,6 +391,30 @@
 
 <script>
   AOS.init();
+</script>
+<script>
+  let startY;
+  let endY;
+
+  document.addEventListener("touchstart", (e) => {
+    startY = e.changedTouches[0].screenY;
+  });
+
+  document.addEventListener("touchend", (e) => {
+    endY = e.changedTouches[0].screenY;
+
+    if (startY > endY) {
+      // Swiped Up
+      document.querySelectorAll('.benefit-card').forEach(card => {
+        card.classList.add('show-from-bottom');
+      });
+    } else if (startY < endY) {
+      // Swiped Down
+      document.querySelectorAll('.benefit-card').forEach(card => {
+        card.classList.add('show-from-top');
+      });
+    }
+  });
 </script>
 </body>
 </html>
