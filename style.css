@@ -614,7 +614,7 @@ body {
     overflow: visible;
     position: relative;
   }
-
+  
   .benefits-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 2.8rem;
@@ -622,15 +622,15 @@ body {
     text-align: center;
     margin: 10px 0 60px;
   }
-
+  
   .benefits-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 40px;
   }
-
-  /* New card style */
+  
+  /* Card style */
   .benefit-card {
     background-color: white;
     border-radius: 20px;
@@ -642,16 +642,29 @@ body {
     position: relative;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s ease;
-    opacity: 0; /* Cards start hidden */
-    transform: translateY(30px); /* Cards start off-screen */
-    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0; /* Start hidden */
+    transform: translateY(30px); /* Off-screen for init */
     will-change: transform, opacity;
   }
-
+  
+  /* Animate from left */
+  .benefit-card.animate-left {
+    opacity: 1;
+    transform: translateX(0);
+    animation: slideFromLeft 1s ease forwards;
+  }
+  
+  /* Animate from right */
+  .benefit-card.animate-right {
+    opacity: 1;
+    transform: translateX(0);
+    animation: slideFromRight 1s ease forwards;
+  }
+  
   .benefit-card:hover {
     transform: scale(1.05);
   }
-
+  
   /* Circle icon holder */
   .benefit-icon-circle {
     width: 80px;
@@ -667,13 +680,13 @@ body {
     align-items: center;
     justify-content: center;
   }
-
+  
   .benefit-icon-circle img {
     width: 40px;
     height: 40px;
     object-fit: contain;
   }
-
+  
   /* Content below icon */
   .benefit-content h3 {
     font-family: 'Montserrat', sans-serif;
@@ -681,15 +694,15 @@ body {
     margin: 10px 0 5px;
     color: #2c2c2c;
   }
-
+  
   .benefit-content p {
     font-size: 1rem;
     color: #444;
     font-family: 'Montserrat', sans-serif;
     padding: 0 10px;
   }
-
-  /* Optional icon sizing overrides if needed */
+  
+  /* Optional icon sizing */
   .icon-1 img,
   .icon-2 img,
   .icon-3 img,
@@ -697,7 +710,7 @@ body {
     width: 42px;
     height: 42px;
   }
-
+  
   /* Responsive layout */
   @media (max-width: 768px) {
     .benefits-container {
@@ -705,60 +718,50 @@ body {
       align-items: center;
       gap: 30px;
     }
-
-    @media (max-width: 768px) {
-      .benefit-card {
-        opacity: 1 !important;
-        transform: translateY(0) !important;
-        animation: none !important;
-      }
-    }
-    
-
+  
     .benefits-title {
       text-align: center;
     }
-  }
-
-  /* Animations for card sliding */
-  @keyframes slideFromTop {
-    from {
-      transform: translateY(-100%);
-    }
-    to {
-      transform: translateY(0);
+  
+    .benefit-card {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+      animation: none !important;
     }
   }
-
-  @keyframes slideFromBottom {
-    from {
-      transform: translateY(100%);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-
-  .benefit-card.show-from-top {
-    animation: slideFromTop 2s ease-out forwards;
-  }
-
-  .benefit-card.show-from-bottom {
-    animation: slideFromBottom 2s ease-out forwards;
-  }
-
-  /* Animation for fade-in and up */
-  @keyframes fadeInUp {
+  
+  /* Slide from left */
+  @keyframes slideFromLeft {
     from {
       opacity: 0;
-      transform: translateY(30px);
+      transform: translateX(-50px);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(0);
     }
   }
+  
+  /* Slide from right */
+  @keyframes slideFromRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .animate-left {
+    animation: slideInFromLeft 1s ease-out forwards;
+  }
+  
+  .animate-right {
+    animation: slideInFromRight 1s ease-out forwards;
+  }
 
+  
   
  /* Contact Section */
  .contact-section {

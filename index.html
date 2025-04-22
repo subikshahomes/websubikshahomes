@@ -170,10 +170,6 @@
   </div>
 </section>
 
-
-  
-
-
 <section class="benefits-section">
   <h2 class="benefits-title">Top Benefits</h2>
   <div class="benefits-container">
@@ -369,29 +365,59 @@
   hamburger.classList.toggle("active");
   document.querySelector(".nav-links").classList.toggle("active");
 }
-
   </script>
+
+
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          const target = entry.target;
+  
+          // Apply .visible class for general elements
+          target.classList.add('visible');
+  
+          // Check if it's a benefit card
+          if (target.classList.contains('benefit-card')) {
+            const allCards = Array.from(document.querySelectorAll('.benefit-card'));
+            const cardIndex = allCards.indexOf(target);
+  
+            if (cardIndex < 2) {
+              target.classList.add('animate-left');
+            } else {
+              target.classList.add('animate-right');
+            }
+          }
+  
+          // Stop observing after first reveal (optional)
+          observer.unobserve(target);
         }
       });
     });
   
+    // Observe your about section
     const aboutSection = document.querySelector('.about-container');
     observer.observe(aboutSection);
+  
+    // Observe each benefit card
+    document.querySelectorAll('.benefit-card').forEach(card => {
+      observer.observe(card);
+    });
   </script>
+  
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
   <script>
     AOS.init();
   </script>
+
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
 
 <script>
   AOS.init();
 </script>
+
 <script>
   let startY;
   let endY;
@@ -416,5 +442,7 @@
     }
   });
 </script>
+
+
 </body>
 </html>
