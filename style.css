@@ -611,6 +611,8 @@ body {
   .benefits-section {
     background-color: #fc8a5a;
     padding: 8px 20px 60px;
+    overflow: visible;
+    position: relative;
   }
 
   .benefits-title {
@@ -643,6 +645,7 @@ body {
     opacity: 0; /* Cards start hidden */
     transform: translateY(30px); /* Cards start off-screen */
     animation: fadeInUp 1s ease-out forwards;
+    will-change: transform, opacity;
   }
 
   .benefit-card:hover {
@@ -703,6 +706,15 @@ body {
       gap: 30px;
     }
 
+    @media (max-width: 768px) {
+      .benefit-card {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        animation: none !important;
+      }
+    }
+    
+
     .benefits-title {
       text-align: center;
     }
@@ -748,8 +760,6 @@ body {
   }
 
   
-  
-
  /* Contact Section */
  .contact-section {
   padding: 60px 20px;
