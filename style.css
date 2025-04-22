@@ -636,29 +636,25 @@ body {
     border-radius: 20px;
     width: 200px;
     height: 220px;
-    padding-top: 60px; /* space for icon circle */
+    padding-top: 60px;
     padding-bottom: 20px;
     text-align: center;
     position: relative;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: opacity 1s ease;
-    opacity: 0; /* Start hidden */
-    transform: translateY(30px); /* Off-screen for init */
+    opacity: 0;
+    transform: translateY(30px);
     will-change: transform, opacity;
+    transition: transform 0.3s ease, opacity 0.3s ease;
   }
   
   /* Animate from left */
-  .benefit-card.animate-left {
-    opacity: 1;
-    transform: translateX(0);
-    animation: slideFromLeft 1s ease forwards;
+  .benefit-card.visible.animate-left {
+    animation: slideFromLeft 1s ease-out forwards;
   }
   
   /* Animate from right */
-  .benefit-card.animate-right {
-    opacity: 1;
-    transform: translateX(0);
-    animation: slideFromRight 1s ease forwards;
+  .benefit-card.visible.animate-right {
+    animation: slideFromRight 1s ease-out forwards;
   }
   
   .benefit-card:hover {
@@ -711,25 +707,6 @@ body {
     height: 42px;
   }
   
-  /* Responsive layout */
-  @media (max-width: 768px) {
-    .benefits-container {
-      flex-direction: column;
-      align-items: center;
-      gap: 30px;
-    }
-  
-    .benefits-title {
-      text-align: center;
-    }
-  
-    .benefit-card {
-      opacity: 1 !important;
-      transform: translateY(0) !important;
-      animation: none !important;
-    }
-  }
-  
   /* Slide from left */
   @keyframes slideFromLeft {
     from {
@@ -753,13 +730,23 @@ body {
       transform: translateX(0);
     }
   }
-  .animate-left {
-    animation: slideInFromLeft 1s ease-out forwards;
+  
+  /* Responsive layout */
+  @media (max-width: 768px) {
+    .benefits-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  
+    .benefits-title {
+      text-align: center;
+    }
+  
+    /* DON’T disable animation for mobile anymore */
+    /* We want animations to work on mobile too */
   }
   
-  .animate-right {
-    animation: slideInFromRight 1s ease-out forwards;
-  }
 
 
   

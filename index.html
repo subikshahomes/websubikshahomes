@@ -368,39 +368,6 @@
   </script>
 
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const target = entry.target;
-          target.classList.add('visible');
-
-          if (target.classList.contains('benefit-card')) {
-            const allCards = Array.from(document.querySelectorAll('.benefit-card'));
-            const cardIndex = allCards.indexOf(target);
-
-            if (cardIndex < 2) {
-              target.classList.add('animate-left');
-            } else {
-              target.classList.add('animate-right');
-            }
-          }
-
-          observer.unobserve(target);
-        }
-      });
-    });
-
-    const aboutSection = document.querySelector('.about-container');
-    if (aboutSection) observer.observe(aboutSection);
-
-    document.querySelectorAll('.benefit-card').forEach(card => {
-      observer.observe(card);
-    });
-  });
-</script>
-
   
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -439,7 +406,33 @@
     }
   });
 </script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+          card.classList.add('visible');
 
+          const cards = Array.from(document.querySelectorAll('.benefit-card'));
+          const index = cards.indexOf(card);
+          
+          if (index < 2) {
+            card.classList.add('animate-left');
+          } else {
+            card.classList.add('animate-right');
+          }
+
+          observer.unobserve(card);
+        }
+      });
+    });
+
+    document.querySelectorAll('.benefit-card').forEach(card => {
+      observer.observe(card);
+    });
+  });
+</script>
 
 </body>
 </html>
