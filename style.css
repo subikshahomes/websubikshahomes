@@ -189,7 +189,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: transparent;
+    background-color: rgba(88, 88, 88, 0.4);
     z-index: 1;
 }
 
@@ -220,10 +220,17 @@ body {
 /* Hero Text - Header */
 .hero-text h1 {
   font-size: 4vw;
-  font-weight: 600;
-  line-height: 0.9;
-  text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.7);
+  font-weight: 700;
+  line-height: 0.6;
   letter-spacing: 1px;
+  text-align: center;
+  color: #fff;
+  text-shadow:
+    0 0 5px #fff,
+    /* 0 0 10px #5c3838,
+    0 0 15px #5c3838,
+    0 0 20px #5c3838,
+    0 0 25px #5c3838; */
 }
 
 .hero-text h1 .line-one,
@@ -266,6 +273,26 @@ body {
   }
 }
 
+/* @keyframes glowText {
+  0%, 100% {
+    text-shadow:
+      0 0 5px #fff,
+      0 0 10px #ffaf40,
+      0 0 15px #ffaf40,
+      0 0 20px #ff8c00,
+      0 0 25px #ff8c00;
+  }
+  50% {
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #ffaf40,
+      0 0 6px #ffaf40,
+      0 0 8px #ff8c00,
+      0 0 10px #ff8c00;
+  }
+} */
+
+
 /* Pop-up Animation for Arrows */
 @keyframes popUpArrows {
   from {
@@ -297,7 +324,7 @@ body {
 
   .hero-text h1 {
     font-size: 6vw;
-    line-height: 1.2;
+    line-height: 0.6;
   }
 
   .hero-text h1 .line-one,
