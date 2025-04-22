@@ -368,42 +368,39 @@
   </script>
 
 
-  <script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           const target = entry.target;
-  
-          // Apply .visible class for general elements
           target.classList.add('visible');
-  
-          // Check if it's a benefit card
+
           if (target.classList.contains('benefit-card')) {
             const allCards = Array.from(document.querySelectorAll('.benefit-card'));
             const cardIndex = allCards.indexOf(target);
-  
+
             if (cardIndex < 2) {
               target.classList.add('animate-left');
             } else {
               target.classList.add('animate-right');
             }
           }
-  
-          // Stop observing after first reveal (optional)
+
           observer.unobserve(target);
         }
       });
     });
-  
-    // Observe your about section
+
     const aboutSection = document.querySelector('.about-container');
-    observer.observe(aboutSection);
-  
-    // Observe each benefit card
+    if (aboutSection) observer.observe(aboutSection);
+
     document.querySelectorAll('.benefit-card').forEach(card => {
       observer.observe(card);
     });
-  </script>
+  });
+</script>
+
   
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 

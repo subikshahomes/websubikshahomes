@@ -641,7 +641,7 @@ body {
     text-align: center;
     position: relative;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
+    transition: opacity 1s ease;
     opacity: 0; /* Start hidden */
     transform: translateY(30px); /* Off-screen for init */
     will-change: transform, opacity;
@@ -761,7 +761,7 @@ body {
     animation: slideInFromRight 1s ease-out forwards;
   }
 
-  
+
   
  /* Contact Section */
  .contact-section {
