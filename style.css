@@ -623,6 +623,29 @@ section#home {
   }
 }
 
+/* Dot Indicators */
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.dots span {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border: 2px solid #000;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dots span.active {
+  background-color: #000;
+}
+
+
 
 
 

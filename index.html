@@ -290,11 +290,13 @@
     </div>
   </div>
   <div class="dots" id="dots">
-    <span onclick="goToSlide(0)"></span>
+    <!-- <span onclick="goToSlide(0)"></span>
     <span onclick="goToSlide(1)"></span>
     <span onclick="goToSlide(2)"></span>
     <span onclick="goToSlide(3)"></span>
-    <span onclick="goToSlide(4)"></span>
+    <span onclick="goToSlide(4)"></span> -->
+    <span onclick="goToSlide (0)"></span>
+    <span onclick="goToSlide (1)"></span>
   </div>
 </section>
 </section>
@@ -429,17 +431,10 @@
 
     <!-- Column 2: Contact Info -->
     <div class="footer-contact">
-  <h3>Contact Info</h3>
-  <p>
-    <img src="assets/pin.png" alt="location icon" class="footer-icon" />
-    Plot no: 1 & 1A, Lake View Road, Pallikkaranai, Chennai - 600100
-  </p>
-  <p>
-    <img src="assets/mail.png" alt="Email" class="footer-icon" />
-    <a href="mailto:subikshahomes@gmail.com" class="footer-email">subikshahomes@gmail.com</a>
-  </p>
-</div>
-
+      <h3>Contact Info</h3>
+      <p><img src="assets/pin.png" alt="location icon" class="footer-icon" />Plot no: 1 & 1A, Lake View Road, Pallikkaranai, Chennai - 600100</p>
+      <p><img src="assets/mail.png" alt="Email" class="footer-icon" /><a href="mailto:subikshahomes@gmail.com">subikshahomes@gmail.com</a></p>
+    </div>
 
     <!-- Column 3: Social Links -->
     <div class="footer-links">
@@ -467,7 +462,7 @@
   
 
   <!-- Slider Script -->
-  <script>
+  <!-- <script>
     let currentSlide = 0;
     const slides = document.querySelector(".slides");
     const dots = document.querySelectorAll("#dots span");
@@ -491,35 +486,35 @@
 
     function goToSlide(index) {
       showSlide(index);
-    }
+    } -->
 
     // Touch support
-    let startX = 0;
-    slides.addEventListener("touchstart", e => {
-      startX = e.touches[0].clientX;
-    });
-    slides.addEventListener("touchend", e => {
-      let endX = e.changedTouches[0].clientX;
-      if (startX - endX > 50) nextSlide();
-      if (endX - startX > 50) prevSlide();
-    });
+  //   let startX = 0;
+  //   slides.addEventListener("touchstart", e => {
+  //     startX = e.touches[0].clientX;
+  //   });
+  //   slides.addEventListener("touchend", e => {
+  //     let endX = e.changedTouches[0].clientX;
+  //     if (startX - endX > 50) nextSlide();
+  //     if (endX - startX > 50) prevSlide();
+  //   });
 
-    setInterval(nextSlide, 6000); // Auto-slide every 6 seconds
-    showSlide(0);
-  </script>
+  //   setInterval(nextSlide, 6000); // Auto-slide every 6 seconds
+  //   showSlide(0);
+  // </script>
   <!-- <script>
     function toggleMenu() {
       const nav = document.querySelector('nav');
       nav.classList.toggle('active');
     }
   </script> -->
-  <script>
+  <!-- <script>
     function toggleMenu(hamburger) {
   hamburger.classList.toggle("active");
   document.querySelector(".nav-links").classList.toggle("active");
 }
 
-  </script>
+  </script> -->
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -586,7 +581,7 @@
   });
 </script>
 
-<script>
+<!-- <script>
   const container = document.querySelector('.property-container');
 
   let scrollAmount = 0;
@@ -606,9 +601,42 @@
 
   container.addEventListener('touchstart', () => clearInterval(scrollInterval));
   container.addEventListener('mousedown', () => clearInterval(scrollInterval));
+</script> -->
+
+<script>
+  const container = document.querySelector('.property-container');
+const dots = document.querySelectorAll('#dots span');
+
+function getPageWidth() {
+  const card = document.querySelector('.property-card');
+  const gap = parseFloat(getComputedStyle(container).gap) || 0;
+  const cardWidth = card.offsetWidth;
+  return (cardWidth * 3) + (gap * 2); // 3 cards per page
+}
+
+function updateActiveDot() {
+  const scrollLeft = container.scrollLeft;
+  const pageWidth = getPageWidth();
+  const currentPage = Math.round(scrollLeft / pageWidth);
+
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentPage);
+  });
+}
+
+container.addEventListener('scroll', updateActiveDot);
+
+function goToSlide(index) {
+  const pageWidth = getPageWidth();
+  container.scrollTo({
+    left: index * pageWidth,
+    behavior: 'smooth'
+  });
+}
+
+updateActiveDot();
+
 </script>
-
-
 
 </body>
 </html>
