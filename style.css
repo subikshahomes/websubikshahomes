@@ -976,7 +976,7 @@ section#home {
 
 
   /* Footer */
-  .site-footer {
+.site-footer {
   background-color: #fff4e6;
   padding: 4rem 1rem 2rem;
   font-size: 0.95rem;
@@ -998,11 +998,9 @@ section#home {
 .footer-links {
   flex: 1 1 300px;
   min-width: 260px;
-}
-
-.footer-logo {
   display: flex;
   flex-direction: column;
+  align-items: flex-start; /* Left align by default */
 }
 
 .footer-logo-img {
@@ -1030,21 +1028,33 @@ section#home {
   margin: 0.4rem 0;
   text-decoration: none;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Changed from flex-start to center */
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: nowrap; /* Prevents wrapping of icon/text */
+  word-break: break-word;
   line-height: 1.4;
 }
 
+
+/* Specific fix for location icon alignment */
+.footer-contact .footer-location {
+  display: flex;
+  align-items: flex-start;
+}
+
 .footer-contact .footer-icon {
-  margin-right: 20px;
   width: 18px;
   height: 18px;
+  flex-shrink: 0;
+  margin: 0;
+  vertical-align: middle;
 }
 
 .footer-links .social-icons {
   display: flex;
   align-items: center;
-  justify-content: center; /* Fix alignment on mobile */
+  justify-content: flex-start;
   gap: 12px;
   margin-top: 0.5rem;
   flex-wrap: wrap;
@@ -1090,11 +1100,25 @@ section#home {
   }
 
   .footer-contact p,
-  .footer-contact a {
-    justify-content: center;
-    text-align: center;
-    gap: 6px;
-  }
+.footer-contact a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px !important; /* Reduced and enforced */
+  flex-wrap: nowrap;
+  text-align: center;
+  width: 100%;
+  margin: 0.4rem 0;
+}
+
+.footer-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 0px; /* Ensure vertical alignment */
+  display: inline-block;
+}
+
 
   .footer-description {
     text-align: center;
@@ -1110,6 +1134,10 @@ section#home {
     flex-wrap: wrap;
   }
 }
+
+
+
+
 
   
 
