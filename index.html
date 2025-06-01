@@ -22,6 +22,7 @@
           <a href="#home">Home</a>
           <a href="#about">About</a>
           <a href="#services">Services</a>
+          <a href="#property-section">Gallery</a>
           <a href="#contact">Contact</a>
         </nav>
       
@@ -33,38 +34,73 @@
         </div>
       </header>
       
-      <section id="home">
-        <section class="hero-slider" id="heroSlider">
-          <div class="slides">
-            <div class="slide" style="background-image: url('assets/project1.jpg');"></div>
-            <div class="slide" style="background-image: url('assets/project2.jpg');"></div>
-            <div class="slide" style="background-image: url('assets/project3.jpg');"></div>
-            <div class="slide" style="background-image: url('assets/project4.jpg');"></div>
-            <div class="slide" style="background-image: url('assets/project5.png');"></div>
-          </div>
+  
+  <section id="home">
+  <div class="video-container">
+    <video controls autoplay muted loop playsinline class="bg-video">
+      <source src="assets/Subiksha Homes.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+    <!-- <div class="hero-text">
+      <h1>
+        <span class="line-one">Building trust with</span><br>
+        <span class="line-two">Bricks and Concrete</span>
+      </h1>
+    </div> -->
+
       
-          <div class="hero-text">
-            <h1>
-              <span class="line-one">Building trust with</span><br>
-              <span class="line-two">Bricks and Concrete</span>
-            </h1>
+      <section id="contact">
+  <section class="estimate-section">
+    <div class="estimate-wrapper">
+      <div class="estimate-image">
+        <img src="assets/cta.jpg" alt="Estimate Banner" />
+      </div>
+      <div class="estimate-card">
+        <h2>Get your first estimate for free</h2>
+        <form class="estimate-form" action="https://formsubmit.co/subikshahomes@gmail.com" method="POST">
+          <div class="estimate-input-field">
+            <input type="text" id="name" name="name" required placeholder=" " />
+            <label for="name">Enter your name</label>
           </div>
-     
-          <!-- Navigation arrows -->
-          <div class="nav-arrow left" onclick="prevSlide()">&#10094;</div>
-          <div class="nav-arrow right" onclick="nextSlide()">&#10095;</div>
-      
-          <!-- Dots -->
-          <div class="dots" id="dots">
-            <span onclick="goToSlide(0)"></span>
-            <span onclick="goToSlide(1)"></span>
-            <span onclick="goToSlide(2)"></span>
-            <span onclick="goToSlide(3)"></span>
-            <span onclick="goToSlide(4)"></span>
+          <div class="estimate-input-field">
+            <input type="text" id="phone" name="phone" required placeholder=" " />
+            <label for="phone">Enter your phone number</label>
           </div>
-        </section>
-      </section>
+          <div class="estimate-input-field">
+            <input type="email" id="email" name="email" required placeholder=" " />
+            <label for="email">Enter your email</label>
+          </div>
+          <div class="estimate-input-field">
+            <input type="text" id="area" name="area" required placeholder=" " />
+            <label for="area">Enter your area for construction</label>
+          </div>
+          <div class="estimate-input-field">
+            <input type="text" id="plot" name="plot" required placeholder=" " />
+            <label for="plot">Enter your Plot size (in sq.ft)</label>
+          </div>
+          <div class="estimate-input-field">
+            <input type="text" id="budget" name="budget" required placeholder=" " />
+            <label for="budget">Enter your budget range</label>
+          </div>
+          <div class="estimate-input-field">
+            <textarea id="message" name="message" required placeholder=" "></textarea>
+            <label for="message">Your message</label>
+          </div>
+
+          <input type="hidden" name="_captcha" value="false">
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</section>
+
       
+                       
 <section id="about">
   <section class="about-us">
     <div class="about-container">
@@ -149,6 +185,119 @@
       
   </section>
 </section>
+
+<section class="property-section">
+  <!-- Optional: Add scroll buttons for better UX -->
+  <!-- <button class="scroll-btn scroll-left" aria-label="Scroll left">&lt;</button>
+  <button class="scroll-btn scroll-right" aria-label="Scroll right">&gt;</button> -->
+
+  <div class="property-container" tabindex="0" role="list">
+    <!-- Property 1 -->
+    <div class="property-card" role="listitem">
+      <div class="property-image">
+        <img src="assets/project1.jpg" alt="Adesh Gardens" />
+        <!-- <span class="ribbon">READY-TO-MOVE-IN</span> -->
+      </div>
+      <div class="property-content">
+        <h3>Adesh Gardens</h3>
+        <p class="location">Pallikarani, Chennai</p>
+        <ul>
+          <li><strong>Apartments:</strong> 2 BHK</li>
+          <li><strong>Base Price:</strong> ₹4.74 Cr - ₹6.05 Cr</li>
+          <li><strong>Range:</strong> 2054 - 2615 Sq.ft</li>
+          <li><strong>Status:</strong> Sold Out</li>
+          <!-- <li class="cert">Completion Certificate Obtained</li> -->
+          <!-- <li class="meta">EC/South-I/338/2024 Dated: 30.09.2024</li> -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Property 2 -->
+    <div class="property-card" role="listitem">
+      <div class="property-image">
+        <img src="assets/project2.jpg" alt="Shakthi Gardens" />
+        <!-- <span class="ribbon">NEW LAUNCH</span> -->
+      </div>
+      <div class="property-content">
+        <h3>Shakthi Gardens</h3>
+        <p class="location">Pallikarani, Chennai</p>
+        <ul>
+          <li><strong>Apartments:</strong> 1 & 2 BHK</li>
+          <li><strong>Base Price:</strong> ₹45 - 60 Lakhs</li>
+          <li><strong>Range:</strong> 763 - 970 Sq.ft</li>
+          <li><strong>Status:</strong> Sold Out</li>
+          <!-- <li class="meta">RERA No: TN/29/Building/0527/2024 Dated: 14.11.2024</li> -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Property 3 -->
+    <div class="property-card" role="listitem">
+      <div class="property-image">
+        <img src="assets/project3.jpg" alt="Sudha Shankar Homes" />
+        <!-- <span class="ribbon">Sold Out</span> -->
+      </div>
+      <div class="property-content">
+        <h3>Sudha Shankar Homes </h3>
+        <p class="location">Madipakkam, Chennai</p>
+        <ul>
+          <li><strong>Apartments:</strong> 2 & 3 BHK</li>
+          <li><strong>Base Price:</strong> ₹45 - 70 Lakhs</li>
+          <li><strong>Range:</strong> 824 - 1260 Sq.ft</li>
+          <li><strong>Status:</strong> Sold Out</li>
+          <!-- <li class="meta">RERA No: TN/29/Building/0554/2024 Dated: 04.12.2024</li> -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Property 4 -->
+    <div class="property-card" role="listitem">
+      <div class="property-image">
+        <img src="assets/project4.jpg" alt="Tharamani" />
+        <!-- <span class="ribbon">NEW LAUNCH</span> -->
+      </div>
+      <div class="property-content">
+        <h3>Sakkubhai Illam</h3>
+        <p class="location">Tharamani, Chennai</p>
+        <ul>
+          <li><strong>Individual:</strong> Duplex</li>
+          <li><strong>Base Price:</strong> ₹2.3 Cr</li>
+          <li><strong>Range:</strong> 2000 Sq.ft</li>
+          <!-- <li><strong>Status:</strong> Ongoing</li> -->
+          <!-- <li class="meta">RERA No: TN/29/Building/0554/2024 Dated: 04.12.2024</li> -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Property 5 -->
+    <div class="property-card" role="listitem">
+      <div class="property-image">
+        <img src="assets/project5.png" alt="Seva Nagar" />
+        <!-- <span class="ribbon">NEW LAUNCH</span> -->
+      </div>
+      <div class="property-content">
+        <h3>Lakshan Nivas</h3>
+        <p class="location">Velachery, Chennai</p>
+        <ul>
+          <li><strong>Apartments:</strong> 2 & 3 BHK</li>
+          <li><strong>Base Price:</strong> ₹85 Lakhs - ₹1.2 Cr</li>
+          <li><strong>Range:</strong> 915 - 1218 Sq.ft</li>
+          <li><strong>Status:</strong> Sold Out</li>
+          <!-- <li class="meta">RERA No: TN/29/Building/0554/2024 Dated: 04.12.2024</li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="dots" id="dots">
+    <span onclick="goToSlide(0)"></span>
+    <span onclick="goToSlide(1)"></span>
+    <span onclick="goToSlide(2)"></span>
+    <span onclick="goToSlide(3)"></span>
+    <span onclick="goToSlide(4)"></span>
+  </div>
+</section>
+
+
  
 
 <section class="why-choose-us">
@@ -218,37 +367,31 @@
 </section>
   
   
-  <section id="contact">
-    <section class="contact-section">
-      <div class="contact-card">
-        <h2>Contact Us</h2>
-        <form class="contact-form" action="https://formsubmit.co/subikshahomes@gmail.com" method="POST">
-          <div class="input-field">
-            <input type="text" id="name" name="name" required />
-            <label for="name">Enter your name</label>
-          </div>
-          <div class="input-field">
-            <input type="text" id="phone" name="phone" required />
-            <label for="phone">Enter your phone number</label>
-          </div>
-          <div class="input-field">
-            <input type="email" id="email" name="email" required />
-            <label for="email">Enter your email</label>
-          </div>
-          <div class="input-field">
-            <textarea id="message" name="message" required></textarea>
-            <label for="message">Your message</label>
-          </div>
-  
-          <!-- Optional FormSubmit configs -->
-          <input type="hidden" name="_captcha" value="false">
-          <!-- <input type="hidden" name="_next" value="https://yourdomain.com/thank-you.html"> -->
-  
-          <button type="submit">Submit</button>
-        </form>
-      </div>
-    </section>  
-  </section>
+  <section class="contact-us-section">
+  <div class="contact-us-container">
+    
+    <!-- Left Content -->
+    <div class="contact-us-text">
+      <h2>Ready to Build Together?</h2>
+      <p>At Subiksha Homes, we don’t just build structures — we bring your vision to life with quality, transparency, and commitment.</p>
+      <p>Whether you're planning an individual home or an apartment project, our team is here to guide you at every step.</p>
+      <p class="highlight">Let’s start the conversation.</p>
+    </div>
+
+    <!-- Right Form -->
+    <div class="contact-us-form">
+      <form action="https://formsubmit.co/subikshahomes@gmail.com" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+
   
   
   
@@ -272,43 +415,44 @@
 </script> -->
 
 
-<footer class="footer">
-    <div class="footer-container">
-      <!-- Column 1: Logo and Description -->
-      <div class="footer-logo">
-        <img src="assets/logo.png" alt="Subiksha Homes Logo" class="footer-logo-img" />
-        <p class="footer-description">
-          Building dream homes in a trusted name in joint venture constructions, committed to transforming land into high-quality residential and commercial spaces.
-        </p>
-      </div>
-  
-      <!-- Column 2: Contact Info -->
-      <div class="footer-contact">
-        <h3>Contact Info</h3>
-        <p><img src="assets/pin.png" alt="Location" class="footer-icon" /> Plot no: 1 & 1A, Lake View Road, Pallikkaranai, Chennai - 600100</p>
-        <p><img src="assets/mail.png" alt="Email" class="footer-icon" /> <a href="mailto:subikshahomes@gmail.com">subikshahomes@gmail.com</a></p>
-        <!-- <p><img src="assets/phone-icon.png" alt="Phone" class="footer-icon" /> <a href="tel:+919962995446">+91 9962995446</a></p> -->
-      </div>
-  
-      <!-- Column 3: Social Links with Icons -->
-      <div class="footer-links">
-        <h3>Links</h3>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/subikshahomes" target="_blank" aria-label="Facebook">
-            <img src="assets/facebook.png" alt="Facebook" class="footer-social-icon" />
-          </a>
-          <a href="https://www.instagram.com/subikshahomes" target="_blank" aria-label="Instagram">
-            <img src="assets/instagram.png" alt="Instagram" class="footer-social-icon" />
-          </a>
-          <a href="https://wa.me/919962995446" target="_blank" aria-label="WhatsApp">
-            <img src="assets/whatsapp.png" alt="WhatsApp" class="footer-social-icon" />
-          </a>
-        </div>
+<footer class="site-footer">
+  <div class="footer-container">
+    <!-- Column 1: Logo and Description -->
+    <div class="footer-logo">
+      <img src="assets/logo.png" alt="Subiksha Homes Logo" class="footer-logo-img" />
+      <p class="footer-description">
+        A trusted name in joint venture constructions, committed to transforming land into high-quality residential and commercial spaces.
+      </p>
+    </div>
+
+    <!-- Column 2: Contact Info -->
+    <div class="footer-contact">
+      <h3>Contact Info</h3>
+      <p><img src="assets/pin.png" alt="Location" class="footer-icon" />Plot no: 1 & 1A, Lake View Road, Pallikkaranai, Chennai - 600100</p>
+      <p><img src="assets/mail.png" alt="Email" class="footer-icon" /><a href="mailto:subikshahomes@gmail.com">subikshahomes@gmail.com</a></p>
+    </div>
+
+    <!-- Column 3: Social Links -->
+    <div class="footer-links">
+      <h3>Let's Connect</h3>
+      <div class="social-icons">
+        <a href="https://www.facebook.com/subikshahomes" target="_blank" aria-label="Facebook">
+          <img src="assets/facebook.png" alt="Facebook" class="footer-social-icon" />
+        </a>
+        <a href="https://www.instagram.com/subikshahomes" target="_blank" aria-label="Instagram">
+          <img src="assets/instagram.png" alt="Instagram" class="footer-social-icon" />
+        </a>
+        <a href="https://wa.me/919962995446" target="_blank" aria-label="WhatsApp">
+          <img src="assets/whatsapp.png" alt="WhatsApp" class="footer-social-icon" />
+        </a>
       </div>
     </div>
-    <div class="footer-bottom">
-        &copy; 2025 Subiksha Homes. All rights
-  </footer>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Subiksha Homes. All Rights Reserved.
+  </div>
+</footer>
+
   
 
   
@@ -412,6 +556,49 @@
     }
   });
 </script>
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.mySwiper', {
+    slidesPerView: 1,
+    spaceBetween: 24,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    }
+  });
+</script>
+
+<script>
+  const container = document.querySelector('.property-container');
+
+  let scrollAmount = 0;
+  const scrollStep = container.offsetWidth / 3 + 24;
+  const maxScroll = container.scrollWidth - container.clientWidth;
+
+  function autoScroll() {
+    if (scrollAmount < maxScroll) {
+      scrollAmount += scrollStep;
+    } else {
+      scrollAmount = 0;
+    }
+    container.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+  }
+
+  let scrollInterval = setInterval(autoScroll, 3000);
+
+  container.addEventListener('touchstart', () => clearInterval(scrollInterval));
+  container.addEventListener('mousedown', () => clearInterval(scrollInterval));
+</script>
+
 
 
 </body>
